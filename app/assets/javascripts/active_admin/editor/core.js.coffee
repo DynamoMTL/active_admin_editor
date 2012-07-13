@@ -3,16 +3,18 @@
     active_admin_editor = $(this)
 
     if active_admin_editor.length > 0
-      textarea_id = active_admin_editor.find('textarea').attr('id')
-      toolbar_id  = active_admin_editor.find('.active_admin_editor_toolbar').attr('id')
+      active_admin_editor.each (index, element) =>
+        textarea_id = $(element).find('textarea').attr('id')
+        toolbar_id = $(element).find('.active_admin_editor_toolbar').attr('id')
 
-      editor = new wysihtml5.Editor(textarea_id, {
-        toolbar: toolbar_id,
-        stylesheets: "/assets/wysiwyg.css",
-        parserRules: wysihtml5ParserRules
-      })
+        editor = new wysihtml5.Editor(textarea_id, {
+          toolbar: toolbar_id,
+          stylesheets: "/assets/wysiwyg.css",
+          parserRules: wysihtml5ParserRules
+        })
 
-      window.editor = editor
+        window.editor = editor
+
 
       image_dialog = active_admin_editor.find('[data-wysihtml5-dialog="insertImage"]')
 
