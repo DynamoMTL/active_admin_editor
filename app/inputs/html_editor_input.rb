@@ -78,7 +78,7 @@ class HtmlEditorInput < Formtastic::Inputs::TextInput
 
   def input_html_options
     {
-      quicksave: false
+      quicksave: true
     }.merge(super)
   end
 
