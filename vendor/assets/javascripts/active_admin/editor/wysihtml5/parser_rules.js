@@ -100,6 +100,7 @@ var wysihtml5ParserRules = {
      *                            - numbers:  ensures that the attribute only contains numeric characters
      */
     "tags": {
+        "glossary": 1,
         "tr": {
             "add_class": {
                 "align": "align_text"
